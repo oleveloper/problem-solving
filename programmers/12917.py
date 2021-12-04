@@ -5,8 +5,9 @@ def solution(s):
     answer = ''
     capstr = ''
     
+    s = sorted(s)
     for v in s[::-1]:
         if ord(v) > 64 and ord(v) < 91: capstr += v
         else: answer += v
-    
+
     return answer + capstr
