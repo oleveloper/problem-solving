@@ -3,8 +3,7 @@
 
 def solution(storey):
     answer, i = 0, 0
-    l = [int(x) for x in str(storey)[::-1]]
-    l.append(0)
+    l = [int(x) for x in str(storey)[::-1]] + [0]
     
     while i < len(l):
         if l[i] > 5:
