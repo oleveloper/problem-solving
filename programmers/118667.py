@@ -4,11 +4,11 @@
 from collections import deque
 
 def solution(queue1, queue2):
-    answer = -1
+    answer = 0
     dq1, dq2 = deque(queue1), deque(queue2)
     s1, s2 = sum(dq1), sum(dq2)
-    i = 0
-    while i < 300000:
+
+    while answer < 300000:
         if s1 < s2:
             elem = dq2.popleft()
             s1 += elem
@@ -19,7 +19,7 @@ def solution(queue1, queue2):
             s1 -= elem
             s2 += elem
             dq2.append(elem)
-        else: return i
-        i += 1
+        else: return answer
+        answer += 1
     
-    return answer
+    return -1
